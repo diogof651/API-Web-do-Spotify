@@ -20,6 +20,7 @@ Este projeto foi desenvolvido como parte de um trabalho prático para a discipli
 
 - `diagram/`: Contém o diagrama ER/EER em formato PDF.
 - `scripts/`: Contém o script/programa para importar os dados da API para o banco de dados PostgreSQL.
+- 'scripts/IDs': Contém os IDs únicos de cada usuário. 
 - `database/`: Contém o dump do banco de dados (.sql) com dados e estrutura.
 - `README.md`: Este arquivo, contendo instruções detalhadas sobre o projeto.
 
