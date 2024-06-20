@@ -24,6 +24,20 @@ Este projeto foi desenvolvido como parte de um trabalho prático para a discipli
 - `database/`: Contém o dump do banco de dados (.sql) com dados e estrutura.
 - `README.md`: Este arquivo, contendo instruções detalhadas sobre o projeto.
 
+    project_folder/
+        │
+        ├── script/
+        │   ├── menu.py
+        │   ├── import_data.py
+        │   └── IDs/
+        │       ├── client_id.txt
+        │       └── client_secret.txt
+        └── database/
+            ├── schema.sql
+            └── db_config.py
+        └── diagram/
+            └── diagram.png 
+
 ## Pré-requisitos
 
 1. **Conta Spotify**: Você precisará de uma conta Spotify para interagir com a API.
