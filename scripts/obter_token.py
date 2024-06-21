@@ -4,7 +4,7 @@ import json
 # Credenciais da API do Spotify
 CLIENT_ID = '76b6ccdf37334e00bd2d36cb5d8bf4ca'
 CLIENT_SECRET = '29eab5b3e6e446d5904d46be3c305866'
-BQAz7PqSqnrQD3_SbkRcTijp0eTHlq48E6R50vSqAa4x7ZfIkXm0wjDFl7lhyOe0v0ANFlSPq3tvKBLJvNR5sBvg544d_Sz9zw6mygITRNFTeZYJ9OM
+# BQAz7PqSqnrQD3_SbkRcTijp0eTHlq48E6R50vSqAa4x7ZfIkXm0wjDFl7lhyOe0v0ANFlSPq3tvKBLJvNR5sBvg544d_Sz9zw6mygITRNFTeZYJ9OM
 # Comando curl para obter o token de acesso
 curl_command = [
     'curl',

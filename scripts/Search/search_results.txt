@@ -1,0 +1,365 @@
+{
+    "artists": {
+        "href": "https://api.spotify.com/v1/search?query=artist&type=artist&offset=0&limit=10",
+        "items": [
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/3kYFawNQVZ00FQbgs4rVBe"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 130233
+                },
+                "genres": [
+                    "alternative pop rock",
+                    "neon pop punk",
+                    "pop emo",
+                    "texas pop punk"
+                ],
+                "href": "https://api.spotify.com/v1/artists/3kYFawNQVZ00FQbgs4rVBe",
+                "id": "3kYFawNQVZ00FQbgs4rVBe",
+                "images": [
+                    {
+                        "height": 1000,
+                        "url": "https://i.scdn.co/image/0078316432cdfb6733c3bde0dc61754d45442d0f",
+                        "width": 1000
+                    },
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/9b99c1bb64c969e19a59bc6a8f50155d537511c1",
+                        "width": 640
+                    },
+                    {
+                        "height": 200,
+                        "url": "https://i.scdn.co/image/cfe1be969957fa426a64afefe2355dbd4c46e49c",
+                        "width": 200
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/81d6e8a4c30e6b1875ba1a5e81f892369f29b7ee",
+                        "width": 64
+                    }
+                ],
+                "name": "Artist Vs Poet",
+                "popularity": 42,
+                "type": "artist",
+                "uri": "spotify:artist:3kYFawNQVZ00FQbgs4rVBe"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/7yURu3gRxmCReoYCg8m5M9"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 89584
+                },
+                "genres": [],
+                "href": "https://api.spotify.com/v1/artists/7yURu3gRxmCReoYCg8m5M9",
+                "id": "7yURu3gRxmCReoYCg8m5M9",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebe0ea5c3d946765277525506a",
+                        "width": 640
+                    },
+                    {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab67616100005174e0ea5c3d946765277525506a",
+                        "width": 320
+                    },
+                    {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f178e0ea5c3d946765277525506a",
+                        "width": 160
+                    }
+                ],
+                "name": "charli d'amelio",
+                "popularity": 28,
+                "type": "artist",
+                "uri": "spotify:artist:7yURu3gRxmCReoYCg8m5M9"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0KlSW3j5fUEfej47FOrBMr"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 18439
+                },
+                "genres": [],
+                "href": "https://api.spotify.com/v1/artists/0KlSW3j5fUEfej47FOrBMr",
+                "id": "0KlSW3j5fUEfej47FOrBMr",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb41ad0628e8ca64e3acd22c36",
+                        "width": 640
+                    },
+                    {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab6761610000517441ad0628e8ca64e3acd22c36",
+                        "width": 320
+                    },
+                    {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f17841ad0628e8ca64e3acd22c36",
+                        "width": 160
+                    }
+                ],
+                "name": "Artists Of Then, Now & Forever",
+                "popularity": 36,
+                "type": "artist",
+                "uri": "spotify:artist:0KlSW3j5fUEfej47FOrBMr"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0lzz7vFjUA0jCmEy1PR53a"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 18433
+                },
+                "genres": [],
+                "href": "https://api.spotify.com/v1/artists/0lzz7vFjUA0jCmEy1PR53a",
+                "id": "0lzz7vFjUA0jCmEy1PR53a",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebaf716cb2fe3ce60d355fc0d6",
+                        "width": 640
+                    },
+                    {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab67616100005174af716cb2fe3ce60d355fc0d6",
+                        "width": 320
+                    },
+                    {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f178af716cb2fe3ce60d355fc0d6",
+                        "width": 160
+                    }
+                ],
+                "name": "TheARTI$t",
+                "popularity": 36,
+                "type": "artist",
+                "uri": "spotify:artist:0lzz7vFjUA0jCmEy1PR53a"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/1JOdUvDAzNy3L37rZ4Nigr"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 658461
+                },
+                "genres": [
+                    "antiviral pop"
+                ],
+                "href": "https://api.spotify.com/v1/artists/1JOdUvDAzNy3L37rZ4Nigr",
+                "id": "1JOdUvDAzNy3L37rZ4Nigr",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebd110d2ed2b1063abdf5777db",
+                        "width": 640
+                    },
+                    {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab67616100005174d110d2ed2b1063abdf5777db",
+                        "width": 320
+                    },
+                    {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f178d110d2ed2b1063abdf5777db",
+                        "width": 160
+                    }
+                ],
+                "name": "pewdiepie",
+                "popularity": 40,
+                "type": "artist",
+                "uri": "spotify:artist:1JOdUvDAzNy3L37rZ4Nigr"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/1ZwdS5xdxEREPySFridCfh"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 18049483
+                },
+                "genres": [
+                    "g funk",
+                    "gangster rap",
+                    "hip hop",
+                    "rap",
+                    "west coast rap"
+                ],
+                "href": "https://api.spotify.com/v1/artists/1ZwdS5xdxEREPySFridCfh",
+                "id": "1ZwdS5xdxEREPySFridCfh",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb7f5cc432c9c109248ebec1ac",
+                        "width": 640
+                    },
+                    {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab676161000051747f5cc432c9c109248ebec1ac",
+                        "width": 320
+                    },
+                    {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f1787f5cc432c9c109248ebec1ac",
+                        "width": 160
+                    }
+                ],
+                "name": "2Pac",
+                "popularity": 77,
+                "type": "artist",
+                "uri": "spotify:artist:1ZwdS5xdxEREPySFridCfh"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/6400NrtTpogmMQjyA5TADz"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 598
+                },
+                "genres": [],
+                "href": "https://api.spotify.com/v1/artists/6400NrtTpogmMQjyA5TADz",
+                "id": "6400NrtTpogmMQjyA5TADz",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab67616d0000b273d4232f9825c5001926610b33",
+                        "width": 640
+                    },
+                    {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/ab67616d00001e02d4232f9825c5001926610b33",
+                        "width": 300
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/ab67616d00004851d4232f9825c5001926610b33",
+                        "width": 64
+                    }
+                ],
+                "name": "Art1st",
+                "popularity": 20,
+                "type": "artist",
+                "uri": "spotify:artist:6400NrtTpogmMQjyA5TADz"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0LcJLqbBmaGUft1e9Mm8HV"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 12270610
+                },
+                "genres": [
+                    "europop",
+                    "swedish pop"
+                ],
+                "href": "https://api.spotify.com/v1/artists/0LcJLqbBmaGUft1e9Mm8HV",
+                "id": "0LcJLqbBmaGUft1e9Mm8HV",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5eb124eba6bf3476404531bd7b2",
+                        "width": 640
+                    },
+                    {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab67616100005174124eba6bf3476404531bd7b2",
+                        "width": 320
+                    },
+                    {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f178124eba6bf3476404531bd7b2",
+                        "width": 160
+                    }
+                ],
+                "name": "ABBA",
+                "popularity": 79,
+                "type": "artist",
+                "uri": "spotify:artist:0LcJLqbBmaGUft1e9Mm8HV"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/1tWBEFYkWnb4CXo8Edz2u2"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 114
+                },
+                "genres": [],
+                "href": "https://api.spotify.com/v1/artists/1tWBEFYkWnb4CXo8Edz2u2",
+                "id": "1tWBEFYkWnb4CXo8Edz2u2",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebb389c4534f001601216d3653",
+                        "width": 640
+                    },
+                    {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab67616100005174b389c4534f001601216d3653",
+                        "width": 320
+                    },
+                    {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f178b389c4534f001601216d3653",
+                        "width": 160
+                    }
+                ],
+                "name": "A\\RT",
+                "popularity": 19,
+                "type": "artist",
+                "uri": "spotify:artist:1tWBEFYkWnb4CXo8Edz2u2"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/4gvjmrtzydbMpyJaXUtwvP"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 294750
+                },
+                "genres": [
+                    "social media pop"
+                ],
+                "href": "https://api.spotify.com/v1/artists/4gvjmrtzydbMpyJaXUtwvP",
+                "id": "4gvjmrtzydbMpyJaXUtwvP",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab6761610000e5ebb580924af9763c9f142053e2",
+                        "width": 640
+                    },
+                    {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ab67616100005174b580924af9763c9f142053e2",
+                        "width": 320
+                    },
+                    {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/ab6761610000f178b580924af9763c9f142053e2",
+                        "width": 160
+                    }
+                ],
+                "name": "Addison Rae",
+                "popularity": 53,
+                "type": "artist",
+                "uri": "spotify:artist:4gvjmrtzydbMpyJaXUtwvP"
+            }
+        ],
+        "limit": 10,
+        "next": "https://api.spotify.com/v1/search?query=artist&type=artist&offset=10&limit=10",
+        "offset": 0,
+        "previous": null,
+        "total": 818
+    }
+}

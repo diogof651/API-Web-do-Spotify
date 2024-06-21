@@ -1,8 +1,16 @@
 import subprocess
-import json
 import os
+import json
+import sys
 
-# Função para ler o conteúdo de um arquivo
+# Adiciona o caminho do projeto ao sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from scripts.Search.Buscatudo import realizar_pesquisa
+from scripts.Artistas_service.Artistas_functions import get_artist_info
+from database.db_config import create_table
+from scripts import import_data
+
 def read_file(file_path):
     try:
         with open(file_path, 'r') as file:
@@ -11,10 +19,9 @@ def read_file(file_path):
         print(f'Erro ao ler o arquivo {file_path}: {e}')
         return None
 
-# Função para obter o Client ID e Client Secret dos arquivos
 def get_credentials():
-    script_dir = os.path.dirname(os.path.abspath(__file__))  # Diretório do script
-    ids_dir = os.path.join(script_dir, 'IDs')  # Caminho para a pasta IDs
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    ids_dir = os.path.join(script_dir, 'IDs')
 
     client_id_path = os.path.join(ids_dir, 'client_id.txt')
     client_secret_path = os.path.join(ids_dir, 'client_secret.txt')
@@ -28,7 +35,6 @@ def get_credentials():
 
     return client_id, client_secret
 
-# Função para obter o token de acesso
 def get_access_token(client_id, client_secret):
     curl_command = [
         'curl',
@@ -52,49 +58,52 @@ def get_access_token(client_id, client_secret):
         print(f'Erro ao chamar a API do Spotify: {result.stderr}')
     return None
 
-# Função para obter informações de um artista
-def get_artist_info(access_token):
-    curl_command = [
-        'curl',
-        '-X', 'GET',
-        f'https://api.spotify.com/v1/artists',
-        '-H', f'Authorization: Bearer {access_token}'
-    ]
-
-    result = subprocess.run(curl_command, capture_output=True, text=True)
-
-    if result.returncode == 0:
-        artist_data = json.loads(result.stdout)
-        print(json.dumps(artist_data, indent=4))
-    else:
-        print(f'Erro ao chamar a API do Spotify: {result.stderr}')
-
-# Função principal que exibe o menu
 def main():
-    client_id, client_secret = get_credentials()
-    access_token = None
+    try:
+        create_table()  # Garantir que a tabela exista
 
-    while True:
-        print("\nMenu:")
-        print("1. Obter Token de Acesso")
-        print("2. Buscar Informações de um Artista")
-        print("3. Sair")
+        client_id, client_secret = get_credentials()
+        access_token = get_access_token(client_id, client_secret)
+        
+        if access_token is None:
+            print("Não foi possível obter o token de acesso. Verifique suas credenciais.")
+            return
 
-        choice = input("Escolha uma opção: ")
+        while True:
+            print("\nMenu:")
+            print("1. Obter Token de Acesso")
+            print("2. Buscar Informações de um Artista")
+            print("3. Realizar Pesquisa")
+            print("4. Sair")
 
-        if choice == '1':
-            access_token = get_access_token(client_id, client_secret)
-        elif choice == '2':
-            if access_token is None:
-                print("Você precisa obter o token de acesso primeiro (opção 1).")
-            else:
-                artist_id = input("Digite o ID do artista: ")
-                get_artist_info(access_token)
-        elif choice == '3':
-            print("Saindo...")
-            break
-        else:
-            print("Opção inválida, por favor tente novamente.")
+            try:
+                choice = input("Escolha uma opção: ")
+
+                if choice == '1':
+                    access_token = get_access_token(client_id, client_secret)
+                elif choice == '2':
+                    if access_token is None:
+                        print("Você precisa obter o token de acesso primeiro (opção 1).")
+                    else:
+                        artist_id = input("Digite o ID do artista: ")
+                        get_artist_info(access_token, artist_id)
+                elif choice == '3':
+                    if access_token is None:
+                        print("Você precisa obter o token de acesso primeiro (opção 1).")
+                    else:
+                        realizar_pesquisa(access_token)
+                elif choice == '4':
+                    print("Saindo...")
+                    break
+                else:
+                    print("Opção inválida, por favor tente novamente.")
+            except KeyboardInterrupt:
+                print("\nPrograma interrompido pelo usuário. Saindo...")
+                break
+            except Exception as e:
+                print(f"Ocorreu um erro: {e}")
+    except Exception as e:
+        print(f"Erro ao inicializar o programa: {e}")
 
 if __name__ == '__main__':
     main()
