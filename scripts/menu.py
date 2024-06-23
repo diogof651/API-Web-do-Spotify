@@ -7,9 +7,10 @@ import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from scripts.Search.Buscatudo import realizar_pesquisa
-from scripts.Artistas_service.Artistas_functions import get_artist_info
+from scripts.Serviços.Artistas_service.Artistas_functions import get_artist_info
 from database.db_config import create_table
 from scripts import import_data
+from scripts.Serviços.Genres_service.Genres_functions import get_available_genre_seeds
 
 def read_file(file_path):
     try:
@@ -73,8 +74,10 @@ def main():
             print("\nMenu:")
             print("1. Obter Token de Acesso")
             print("2. Buscar Informações de um Artista")
-            print("3. Realizar Pesquisa")
-            print("4. Sair")
+            print("3. Buscar Gêneros")            
+            print("4. Realizar Pesquisa")
+
+            print("5. Sair")
 
             try:
                 choice = input("Escolha uma opção: ")
@@ -87,12 +90,23 @@ def main():
                     else:
                         artist_id = input("Digite o ID do artista: ")
                         get_artist_info(access_token, artist_id)
+                        print("Tabela de Gêneros atualizada no Banco de Dados!")
                 elif choice == '3':
                     if access_token is None:
                         print("Você precisa obter o token de acesso primeiro (opção 1).")
                     else:
-                        realizar_pesquisa(access_token)
+                        get_available_genre_seeds(access_token)
                 elif choice == '4':
+                    if access_token is None:
+                        print("Você precisa obter o token de acesso primeiro (opção 1).")
+                    else:
+                        realizar_pesquisa(access_token)
+                elif choice == '5':
+                    if access_token is None:
+                        print("Você precisa obter o token de acesso primeiro (opção 1).")
+                    else:
+                        realizar_pesquisa(access_token)
+                elif choice == '5':
                     print("Saindo...")
                     break
                 else:
