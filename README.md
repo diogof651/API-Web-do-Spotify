@@ -7,6 +7,7 @@ Este projeto foi desenvolvido como parte de um trabalho prático para a discipli
 ## Integrantes do Grupo
 
 - Diogo Felipe - Téc. em Análise e Desenvolvimento de Sistemas - UFMS
+- Celso de Oliveira Júnior - Téc. em Análise e Desenvolvimento de Sistemas - UFMS
 
 ## Tecnologias Utilizadas
 
@@ -28,6 +29,7 @@ Este projeto foi desenvolvido como parte de um trabalho prático para a discipli
    -   `│`
    -   `├── script/`
    -   `│   ├── menu.py`
+   -   `│   ├── Services.py`
    -   `│   ├── import_data.py`
    -   `│   └── IDs/`
    -   `│       ├── client_id.txt`
