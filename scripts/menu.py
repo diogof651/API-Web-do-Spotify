@@ -3,6 +3,8 @@ import os
 import json
 import sys
 
+from Serviços.Episodes_service.Episodes_functions import get_episode_info
+
 # Adiciona o caminho do projeto ao sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
@@ -74,39 +76,45 @@ def main():
             print("\nMenu:")
             print("1. Obter Token de Acesso")
             print("2. Buscar Informações de um Artista")
-            print("3. Buscar Gêneros")            
-            print("4. Realizar Pesquisa")
-
-            print("5. Sair")
+            print("3. Buscar Gêneros")
+            print("4. Buscar Episodio")                        
+            print("5. Realizar Pesquisa")
+            print("6. Sair")
 
             try:
                 choice = input("Escolha uma opção: ")
 
-                if choice == '1':
+                if choice == '1': #Obter Token de Acesso
                     access_token = get_access_token(client_id, client_secret)
-                elif choice == '2':
+                elif choice == '2': #Buscar Informações de um Artista
                     if access_token is None:
                         print("Você precisa obter o token de acesso primeiro (opção 1).")
                     else:
                         artist_id = input("Digite o ID do artista: ")
                         get_artist_info(access_token, artist_id)
                         print("Tabela de Gêneros atualizada no Banco de Dados!")
-                elif choice == '3':
+                elif choice == '3': #Buscar Gêneros
                     if access_token is None:
                         print("Você precisa obter o token de acesso primeiro (opção 1).")
                     else:
                         get_available_genre_seeds(access_token)
-                elif choice == '4':
+                elif choice == '4': # Buscar Episodio
+                    if access_token is None:
+                        print("Você precisa obter o token de acesso primeiro (opção 1).")
+                    else:
+                        episode_id = input("Digite o ID do episódio: ")
+                        get_episode_info(access_token,episode_id)
+
+                
+
+                elif choice == '5': #Realizar Pesquisa
+
                     if access_token is None:
                         print("Você precisa obter o token de acesso primeiro (opção 1).")
                     else:
                         realizar_pesquisa(access_token)
-                elif choice == '5':
-                    if access_token is None:
-                        print("Você precisa obter o token de acesso primeiro (opção 1).")
-                    else:
-                        realizar_pesquisa(access_token)
-                elif choice == '5':
+                
+                elif choice == '6':
                     print("Saindo...")
                     break
                 else:

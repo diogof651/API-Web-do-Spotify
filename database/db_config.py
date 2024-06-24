@@ -45,7 +45,7 @@ def create_table():
                             id VARCHAR(255) PRIMARY KEY,
                             name VARCHAR(255) NOT NULL,
                             external_url VARCHAR(255),
-                            datacriacao timestamp with time zone NOT NULL
+                            datacriacao timestamp with time zone
                         );
                     '''
                     create_table_album_artists = '''
@@ -90,7 +90,7 @@ def create_table():
                     cursor.execute(create_table_album_artists)
                     cursor.execute(create_table_genres)
                     cursor.execute(create_table_market)
-                    cursor.execute(insert_codPaises_iso_3166(cursor))  #Diogo 23/06/2024 insere dados na tabela market
+                    #cursor.execute(insert_codPaises_iso_3166(cursor))  #Diogo 23/06/2024 insere dados na tabela market
                     
                 print("Tabelas criadas com sucesso.")
     except Exception as e:

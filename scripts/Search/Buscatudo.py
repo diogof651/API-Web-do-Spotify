@@ -1,3 +1,4 @@
+from datetime import datetime
 import subprocess
 import json
 import os
@@ -7,6 +8,15 @@ from database.insert_track_data import insert_track_data
 from database.insert_genres_data import insert_genres_data
 from scripts.Serviços.Genres_service.Genres_functions import get_available_genre_seeds
 
+from datetime import datetime
+import subprocess
+import json
+import os
+import psycopg2  # Importe psycopg2 para conectar ao PostgreSQL
+from database.db_config import connect_db  # Importe a função connect_db do seu arquivo db_config
+from database.insert_track_data import insert_track_data
+from database.insert_genres_data import insert_genres_data
+from scripts.Serviços.Genres_service.Genres_functions import get_available_genre_seeds
 
 def realizar_pesquisa(access_token):
     query = input("Digite a consulta de pesquisa: ")
@@ -81,10 +91,28 @@ def realizar_pesquisa(access_token):
                 if 'show' in item_types.split(','):
                     all_results.extend(search_results.get('shows', {}).get('items', []))
                 if 'episode' in item_types.split(','):
-                    all_results.extend(search_results.get('episodes', {}).get('items', []))
+                    while len(all_results) < total_results:
+                        items = search_results.get('episodes', {}).get('items', [])
+                        all_results.extend(items)
+                        if len(all_results) >= total_results:
+                            break
+                        next_offset = len(all_results)
+                        url_with_offset = f"{url}&offset={next_offset}"
+                        curl_command = [
+                            'curl',
+                            '--request', 'GET',
+                            '--url', url_with_offset,
+                            '--header', f"Authorization: Bearer {access_token}"
+                        ]
+                        result = subprocess.run(curl_command, capture_output=True, text=True, check=True, encoding='utf-8')
+                        if result.stdout:
+                            search_results = json.loads(result.stdout)
+                        else:
+                            print(f'A saída do subprocesso está vazia. Verifique a consulta.')
+                            break
                 if 'audiobook' in item_types.split(','):
                     all_results.extend(search_results.get('audiobooks', {}).get('items', []))
-            
+
         except (json.JSONDecodeError, AttributeError) as e:
             print(f'Erro ao decodificar ou processar os resultados da API: {e}')
             return
@@ -111,11 +139,13 @@ def realizar_pesquisa(access_token):
 
 
 
+
 def insert_to_db(search_results):
     try:
         connection = connect_db()
         if connection:
             cursor = connection.cursor()
+            datacriacao = datetime.now()  # Get the current timestamp
             for item in search_results:
                 if 'id' in item:
                     spotify_id = item['id']
@@ -129,7 +159,10 @@ def insert_to_db(search_results):
                     else:
                         # Inserir o spotify_id no banco de dados
                         try:
-                            cursor.execute('INSERT INTO artistid (spotify_id) VALUES (%s) ON CONFLICT (spotify_id) DO NOTHING', (spotify_id,))
+                            cursor.execute(
+                                'INSERT INTO artistid (spotify_id, datacriacao) VALUES (%s, %s) ON CONFLICT (spotify_id) DO NOTHING',
+                                (spotify_id, datacriacao)
+                            )
                             print(f'Inserido ID do artista: {spotify_id}')
                         except Exception as e:
                             print(f'Erro ao inserir dados no banco de dados: {e}')
@@ -141,7 +174,6 @@ def insert_to_db(search_results):
             print("Dados inseridos no banco de dados com sucesso.")
     except Exception as e:
         print(f'Erro ao conectar ou inserir dados no banco de dados: {e}')
-
 
 # Exemplo de uso (comentado)
 # """

@@ -4,7 +4,7 @@ import psycopg2
 def insert_codPaises_iso_3166(cursor):
     
     cursor.execute('''                             
-            INSERT INTO iso_3166_1 (code, country_name, year) VALUES
+            INSERT INTO market (code, country_name, year) VALUES
             ('AD', 'Andorra', 1974),
             ('AE', 'Emirados Árabes Unidos', 1974),
             ('AF', 'Afeganistão', 1974),
